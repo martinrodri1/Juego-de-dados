@@ -9,7 +9,7 @@ int sumarVector(int v[], int tam );
 int maximoVector(int v[], int tam);
 void ponerCero(int v[], int tam);
 void entreTurnos (int ron, int punTotal, string &nombreJ1);
-void InterfazEscalera (int ronda, int punTotal, string &nombreJ1);
+int resultadoCombinaciones (int v[], int tam);
 
 void CargarNombreJ1 (string &nombre){
     cout << "Nombre del jugador 1: ";
@@ -84,7 +84,8 @@ void entreTurnos (int ron, int punTotal, string &nombreJ1){
     return;
     }
     else {
-        cout << "­­­ LLEGASTE A 100 PUNTOS!!! EN: " << ron << " RONDAS" << endl;
+        cout << "--------------- | GANASTE! | ---------------" << endl;
+        cout << "­­­ LLEGASTE A " << punTotal << " puntos en " << ron << " RONDAS" << endl;
         cout << "FELICIDADES" << endl << "FIN DEL JUEGO" << endl;
         return;
     }
@@ -101,15 +102,19 @@ int resultadoCombinaciones (int v[], int tam){
         }
         if (cont==6){
             if (x+1!=6){
-                return valor = v[y]*10;
+                valor = v[y-1]*10;
+                cout << endl << endl << "----------- |   CONSEGUISTE UN SEXTETO :) | -----------"<< endl;
+                return valor;
             }
             else {
+                cout << endl << endl << "----------- |   CONSEGUISTE UN SEXTETO DE SEIS :/ | -----------"<< endl;
                 return valor = 0;
             }
         }
         else if (cont==1){
             contGeneral++;
             if (contGeneral==6){
+                cout << endl << endl << "----------- |   CONSEGUISTE UNA ESCALERA :D | -----------"<< endl;
                 return valor = 100;
             }
             else {
@@ -119,18 +124,13 @@ int resultadoCombinaciones (int v[], int tam){
         }
         else {
             valor = sumarVector (v, tam);
+
         }
     }
 
-
+cout << endl << endl << "---------- |   SUMA DE DADOS  | ----------"<< endl;
     return valor;
 }
-void InterfazEscalera (int ronda, int punTotal, string &nombreJ1){
-        cout << endl << endl << "----------- |   CONSEGUISTE UNA ESCALERA  | -----------"<< endl;
-        cout << " -------------- |  GANASTE EL JUEGO  | --------------- " << endl;
-        system("pause");
-        system("cls");
-        return;
 
-}
+
 #endif // FUNCIONES_H_INCLUDED
