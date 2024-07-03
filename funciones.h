@@ -10,6 +10,9 @@ int maximoVector(int v[], int tam);
 void ponerCero(int v[], int tam);
 void entreTurnos (int ron, int punTotal, string &nombreJ1);
 int resultadoCombinaciones (int v[], int tam);
+void cargarVector (int v[], int tam);
+
+
 
 void CargarNombreJ1 (string &nombre){
     cout << "Nombre del jugador 1: ";
@@ -78,9 +81,15 @@ void ponerCero(int v[], int tam){
 
 void entreTurnos (int ron, int punTotal, string &nombreJ1){
     if (punTotal<100){
+    cout<< "------------------------------------"<<endl;
     cout << "RONDA N " << ron+1 << endl;
+    cout<< "------------------------------------"<<endl;
     cout << "PROXIMO TURNO: " << nombreJ1 << endl;
+    cout<< "------------------------------------"<<endl;
+
     cout << "PUNTAJE: " << punTotal << endl;
+    cout<< "------------------------------------"<<endl;
+
     return;
     }
     else {
@@ -132,5 +141,41 @@ cout << endl << endl << "---------- |   SUMA DE DADOS  | ----------"<< endl;
     return valor;
 }
 
+void entreTurnosJ2 (int ron, int punTotalJ1, string &nombreJ1, int punTotalJ2, string &nombreJ2){
+    if (punTotalJ1<100&& punTotalJ2<100){
+    cout<< "------------------------------------"<<endl;
+    cout << "RONDA N " << ron << endl;
+    cout<< "------------------------------------"<<endl;
+    cout << "JUGADOR: " << nombreJ1 << endl;
+    cout<<  "PUNTAJE: "<< punTotalJ1<<endl;
+    cout<< "------------------------------------"<<endl;
+
+    cout << "JUGADOR: " << nombreJ2 << endl;
+    cout<<  "PUNTAJE: "<< punTotalJ2<<endl;
+    cout<< "------------------------------------"<<endl;
+
+    return;
+    }
+    else if(punTotalJ1>punTotalJ2) {
+        cout << "--------------- | GANASTE! "<<nombreJ1<< "| ---------------" <<endl;
+        cout << "­­­ LLEGASTE A " << punTotalJ1 << " puntos en " << ron << " RONDAS" << endl;
+        cout << "FELICIDADES" << endl << "FIN DEL JUEGO" << endl;
+        return;
+    }else{    cout << "--------------- | GANASTE! "<<nombreJ2<< "| ---------------" <<endl;
+        cout << "­­­ LLEGASTE A " << punTotalJ2 << " puntos en " << ron << " RONDAS" << endl;
+        cout << "FELICIDADES" << endl << "FIN DEL JUEGO" << endl;
+        return;
+    }
+
+}
+
+void cargarVector (int v[], int tam){
+    int x;
+    for (x=0; x<tam; x++){
+        cout << "Ingrese el valor del dado: ";
+        cin >> v[x];
+    }
+
+}
 
 #endif // FUNCIONES_H_INCLUDED
