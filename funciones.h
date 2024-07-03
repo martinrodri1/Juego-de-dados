@@ -9,6 +9,7 @@ int sumarVector(int v[], int tam );
 int maximoVector(int v[], int tam);
 void ponerCero(int v[], int tam);
 void entreTurnos (int ron, int punTotal, string &nombreJ1);
+void entreTurnosJ2 (int ron, int punTotalJ1, string &nombreJ1, int punTotalJ2, string &nombreJ2);
 int resultadoCombinaciones (int v[], int tam);
 void cargarVector (int v[], int tam);
 
