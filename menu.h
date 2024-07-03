@@ -209,7 +209,7 @@ int ModoSimulado (string &nombreJ1){
 void mostrarPuntuacionMax(int &maximosPuntos){
     system("cls");
 
-    cout << "####  PUNTUACION MAS ALTA  #### " << endl << endl <<"\t \t"<< maximosPuntos << endl;;
+    cout << "####  PUNTUACION MAS ALTA  #### " << endl << endl <<"\t \t"<< maximosPuntos << endl;
     system("pause");
 }
 #endif // MENU_H_INCLUDED
