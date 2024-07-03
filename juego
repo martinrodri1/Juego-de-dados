@@ -5,7 +5,7 @@ using namespace std;
 #include "menu.h"
 #include "funciones.h"
 int main(){
-    int opcion, puntajeTotal=0, puntuacionJuego;
+    int opcion, puntajeTotal=0, puntuacionJuego, puntajeTotal2=0, puntuacionJuego2, maximosPuntos=0;
     string nombre1, nombre2;
 
     while (true){
@@ -31,19 +31,25 @@ int main(){
         CargarNombreJ1 (nombre1);
         nombre2 = "";
         if (nombre1!=""){
-            puntuacionJuego = JuegoJ1(puntajeTotal, nombre1);
+            puntuacionJuego = JuegoJ1(puntajeTotal, nombre1, maximosPuntos);
         }
         break;
     case 2:
         CargarNombreJ1 (nombre1);
         if (nombre1!=""){
         CargarNombreJ2 (nombre2);
+
+        }
+        if (nombre1!="" && nombre2!=""){
+            puntuacionJuego = JuegoJ2(puntajeTotal, nombre1, puntajeTotal2, nombre2, maximosPuntos);
         }
         break;
     case 3:
+        CargarNombreJ1 (nombre1);
+        ModoSimulado(nombre1);
         break;
     case 4:
-        mostrarPuntuacionMax (puntuacionJuego);
+        mostrarPuntuacionMax (maximosPuntos);
         break;
     case 0:
         return 0;
